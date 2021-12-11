@@ -150,5 +150,8 @@ dist
 
 # Support for Project snippet scope
 !.vscode/*.code-snippets
+.vscode
+
+mochawesome-report
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode

@@ -1,5 +1,9 @@
 {
-  "extension": ["ts"],
+  "extension": [
+    "ts"
+  ],
   "spec": "test/api/*.spec.ts",
-  "require": "ts-node/register"
+  "require": [
+    "ts-node/register"
+  ]
 }
