@@ -14,6 +14,6 @@ describe('When open main page from atsea', () => {
   it('Then give welcome message',async () => {
     expect($('.headerTitle').getText()).to.eventually.equal('Welcome to the atsea shop');
 
-    // expect(browser.getTitle()).to.eventually.equal('Atsea Shop');
+    expect(browser.getTitle()).to.eventually.equal('Atsea Shop');
   })
 })
