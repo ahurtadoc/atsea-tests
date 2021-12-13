@@ -1,7 +1,7 @@
 on:
   schedule:
-  - cron : '0 0 * * *'
-	repository_dispatch:
+  - cron : 0 0 * * *
+  repository_dispatch:
     types: [deployed]
   workflow_dispatch:
 jobs:
@@ -13,7 +13,7 @@ jobs:
     env:
       DEFAULT_BRANCH: master
       NODE_VERSION: 14.x
-      AWS_REGION: us-east-1
+      AWS_REGION: us-east-2
 
     steps:
     - name: Checkout to branch ${{ env.DEFAULT_BRANCH }}
