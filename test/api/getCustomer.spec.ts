@@ -3,6 +3,7 @@ import { post, get } from 'superagent';
 import chai = require('chai');
 import chaiSubset = require('chai-subset');
 import { randomUUID } from 'crypto';
+import { env } from '../../config/config';
 
 chai.use(chaiSubset);
 const { expect } = chai;
@@ -18,7 +19,9 @@ const customerTemplate = {
   role       : "USER"
 };
 
-const url = 'http://localhost:8080/api';
+const url = env.baseUrl;
+console.log(url);
+
 const username = randomUUID();
 const name = username.slice(0,8);
 

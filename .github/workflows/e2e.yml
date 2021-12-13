@@ -30,7 +30,9 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
     - run: npm ci
     - name: Running API tests
-      run: npm run test:api
+      run: |
+        echo 'HOST="${{ secrets.API }}"' > .env
+        npm run test:api
     - name: Upload reports to AWS bucket
       run: aws s3 sync ./mochawesome-report ${{ secrets.AWS_BUCKET }}/api-tests-report
       if: ${{ always() }}

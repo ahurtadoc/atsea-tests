@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist mochawesome-reports",
     "build": "npm run clean && tsc",
-    "test:api": "mocha -t 5000 --reporter mochawesome",
+    "test:api": "mocha -t 5000 --reporter mochawesome -r dotenv/config",
     "test:ui": "npm run build && protractor dist/protractor/local.config.js"
   },
   "repository": {
@@ -46,5 +46,8 @@
     "superagent-promise": "^1.1.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
   }
 }
