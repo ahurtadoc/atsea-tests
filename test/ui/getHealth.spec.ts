@@ -2,10 +2,13 @@ import { browser, $ } from 'protractor';
 import { expect } from 'chai';
 import chai = require('chai');
 import chaiAsPromised = require('chai-as-promised');
+import { env } from '../../config/config';
 
 chai.use(chaiAsPromised);
 
-const url = 'http://host.docker.internal:8080'
+const url = env.hostUrl;
+console.log(url);
+
 describe('When open main page from atsea', () => {
   beforeEach(async () => {
     await browser.get(url)

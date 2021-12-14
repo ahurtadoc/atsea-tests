@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { browser, Config } from 'protractor';
-
+import * as dotenv from 'dotenv';
 const chromeConfig = { browserName: 'chrome'}
 const firefoxConfig = { browserName: 'firefox', 'moz:firefoxOptions':{}}
 
+dotenv.config();
 export const config: Config = {
   framework: 'mocha',
   specs: [ '../test/ui/*.js' ],
@@ -11,7 +12,7 @@ export const config: Config = {
   SELENIUM_PROMISE_MANAGER : false,
   mochaOpts:{
     reporter: 'mochawesome-screenshots',
-    timeout: 5000
+    timeout: 8000
   },
   multiCapabilities: [chromeConfig, firefoxConfig],
   onPrepare: async () => {
