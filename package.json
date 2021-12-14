@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist mochawesome-reports",
     "build": "npm run clean && tsc",
-    "test:api": "mocha -t 5000 --reporter mochawesome -r dotenv/config",
+    "test:api": "mocha -t 5000 --reporter mochawesome",
     "test:ui": "npm run build && protractor dist/protractor/local.config.js"
   },
   "repository": {

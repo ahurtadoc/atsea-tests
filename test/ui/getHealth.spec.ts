@@ -7,7 +7,7 @@ import { env } from '../../config/config';
 chai.use(chaiAsPromised);
 
 const url = env.hostUrl;
-console.log(url);
+// console.log(url);
 
 describe('When open main page from atsea', () => {
   beforeEach(async () => {

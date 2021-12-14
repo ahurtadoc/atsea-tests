@@ -4,6 +4,7 @@
   ],
   "spec": "test/api/*.spec.ts",
   "require": [
-    "ts-node/register"
+    "ts-node/register",
+    "dotenv/config"
   ]
 }

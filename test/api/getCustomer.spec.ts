@@ -20,6 +20,7 @@ const customerTemplate = {
 };
 
 const url = env.baseUrl;
+console.log(url);
 
 const username = randomUUID();
 const name = username.slice(0,8);
