@@ -29,9 +29,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
     - run: npm ci
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_API_HOST: ${{ secrets.API }}
+        envkey_HOST: ${{ secrets.UI }}
+        file_name: .env
     - name: Running API tests
       run: |
-        printf 'API_HOST="${{ secrets.API }}" \nHOST="${{ secrets.UI }}"' > .env
         npm run test:api
     - name: Upload reports to AWS bucket
       run: aws s3 sync ./mochawesome-report ${{ secrets.AWS_BUCKET }}/api-tests-report
