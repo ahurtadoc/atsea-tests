@@ -68,7 +68,7 @@ jobs:
         npm ci
         npx webdriver-manager update
     - name: Provisioning selenium
-      run: docker-compose -f docker-compose-v3.yml up
+      run: docker-compose -f docker-compose-v3.yml up -d
     - name: Run UI test
       run: |
           printf 'API_HOST="${{ secrets.API }}" \nHOST="${{ secrets.UI }}"' > .env
